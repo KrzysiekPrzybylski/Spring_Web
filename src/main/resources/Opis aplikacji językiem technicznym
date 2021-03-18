@@ -1,0 +1,13 @@
+REST API - TASKS
+Aplikacja korzysta w bazy utworzenej w aplikacji MySQL Shell.
+
+Wykorzystane biblioteki:
+	spring-boot-starter
+	spring-boot-starter-web
+	spring-boot-starter-data-jpa
+
+Metody http z których korzysta aplikacja:
+	RequestMethod.GET
+	RequestMethod.PUT
+	RequestMethod.POST
+	RequestMethod.DELETE
