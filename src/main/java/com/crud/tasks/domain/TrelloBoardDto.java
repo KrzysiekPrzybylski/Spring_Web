@@ -6,11 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class TaskDto {
+public class TrelloBoardDto {
 
-    private Long id;
-    private String title;
-    private String content;
+    private String name;
+    private String id;
 }
