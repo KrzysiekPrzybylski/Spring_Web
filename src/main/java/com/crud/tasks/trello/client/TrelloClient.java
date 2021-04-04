@@ -19,6 +19,7 @@ import java.util.*;
 
 import java.util.stream.Collectors;
 
+import static java.util.Optional.ofNullable;
 
 
 @Component
@@ -43,6 +44,9 @@ public class TrelloClient {
                 .toUri();
 
         try {
+//
+//                TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
+//                return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
             TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
             return Optional.ofNullable(boardsResponse)
                     .map(Arrays::asList)
