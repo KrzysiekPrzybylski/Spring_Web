@@ -37,8 +37,8 @@ public class TrelloController {
 //                .filter( t -> t.getName().contains("Kodilla"))
 //                .collect(Collectors.toList());
     }
-    @PostMapping("createTrelloCard")
-    public CreateTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
-        return  trelloClient.createNewCard(trelloCardDto);
-    }
+//    @PostMapping("createTrelloCard")
+//    public CreateTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
+//        return  trelloClient.createNewCard(trelloCardDto);
+//    }
 }
