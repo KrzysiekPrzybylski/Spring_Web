@@ -18,14 +18,14 @@ public class EmailScheduler {
     private final TaskRepository taskRepository;
     private final AdminConfig adminConfig;
 
-    @Scheduled(cron = "0 0 10 * * *")
-    //@Scheduled(fixedDelay = 10000)
+    //@Scheduled(cron = "0 0 10 * * *")
+    //@Scheduled(fixedDelay = 1000)
     public void sendInformationMail(){
         long size = taskRepository.count();
         String message = "Currently in database you got:";
         if(size==1) {
            message = message + "task";
-        } else if(size>1) {
+        } else {
             message = message + "tasks";
         }
         simpleEmailService.send(
