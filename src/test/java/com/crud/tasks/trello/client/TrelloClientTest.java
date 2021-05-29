@@ -1,6 +1,7 @@
 package com.crud.tasks.trello.client;
 
 import com.crud.tasks.domain.CreateTrelloCardDto;
+import com.crud.tasks.domain.Trello;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCardDto;
 import com.crud.tasks.trello.config.TrelloConfig;
@@ -101,5 +102,6 @@ class TrelloClientTest {
         assertEquals(0, emptyList.size());
 
     }
+
 
 }
