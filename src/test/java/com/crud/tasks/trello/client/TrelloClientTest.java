@@ -4,6 +4,7 @@ import com.crud.tasks.domain.CreateTrelloCardDto;
 import com.crud.tasks.domain.Trello;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCardDto;
+import com.crud.tasks.service.TrelloService;
 import com.crud.tasks.trello.config.TrelloConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +33,10 @@ class TrelloClientTest {
 
     @Mock
     private TrelloConfig trelloConfig;
+
+    @Mock
+    private TrelloService trelloService;
+
 
     @Test
     void shouldFetchTrelloBoards() throws URISyntaxException {
@@ -102,6 +107,4 @@ class TrelloClientTest {
         assertEquals(0, emptyList.size());
 
     }
-
-
 }
