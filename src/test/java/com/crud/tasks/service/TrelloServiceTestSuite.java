@@ -1,8 +1,6 @@
 package com.crud.tasks.service;
 
-import com.crud.tasks.config.AdminConfig;
-import com.crud.tasks.controller.TrelloController;
-import com.crud.tasks.domain.CreateTrelloCardDto;
+import com.crud.tasks.domain.CreatedTrelloCardDto;
 import com.crud.tasks.domain.TrelloBoardDto;
 import com.crud.tasks.domain.TrelloCardDto;
 import com.crud.tasks.domain.TrelloListDto;
@@ -11,10 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,11 +52,11 @@ class TrelloServiceTestSuite {
     public void shouldCreateTrelloCardTest() {
         // Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("First card", "Test card", "Top", "1");
-        CreateTrelloCardDto cardDtoStub = new CreateTrelloCardDto("Test Id", "Testing", "Test URL");
+        CreatedTrelloCardDto cardDtoStub = new CreatedTrelloCardDto("Test Id", "Testing", "Test URL");
 
         when(trelloClient.createNewCard(trelloCardDto)).thenReturn(cardDtoStub);
         // When
-        CreateTrelloCardDto createdTrelloCardDto = trelloService.createTrelloCard(trelloCardDto);
+        CreatedTrelloCardDto createdTrelloCardDto = trelloService.createTrelloCard(trelloCardDto);
         // Then
         assertEquals("Test Id", createdTrelloCardDto.getId());
         assertEquals("Testing", createdTrelloCardDto.getName());
