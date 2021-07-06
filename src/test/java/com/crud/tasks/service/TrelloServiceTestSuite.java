@@ -48,19 +48,19 @@ class TrelloServiceTestSuite {
         assertEquals(false, fetchedTrelloBoards.get(0).getLists().get(0).isClosed());
     }
 
-    @Test
-    public void shouldCreateTrelloCardTest() {
-        // Given
-        TrelloCardDto trelloCardDto = new TrelloCardDto("First card", "Test card", "Top", "1");
-        CreatedTrelloCardDto cardDtoStub = new CreatedTrelloCardDto("Test Id", "Testing", "Test URL");
-
-        when(trelloClient.createNewCard(trelloCardDto)).thenReturn(cardDtoStub);
-        // When
-        CreatedTrelloCardDto createdTrelloCardDto = trelloService.createTrelloCard(trelloCardDto);
-        // Then
-        assertEquals("Test Id", createdTrelloCardDto.getId());
-        assertEquals("Testing", createdTrelloCardDto.getName());
-        assertEquals("Test URL", createdTrelloCardDto.getShortUrl());
-    }
+//    @Test
+//    public void shouldCreateTrelloCardTest() {
+//        // Given
+//        TrelloCardDto trelloCardDto = new TrelloCardDto("First card", "Test card", "Top", "1");
+//        CreatedTrelloCardDto cardDtoStub = new CreatedTrelloCardDto("Test Id", "Testing", "Test URL");
+//
+//        when(trelloClient.createNewCard(trelloCardDto)).thenReturn(cardDtoStub);
+//        // When
+//        CreatedTrelloCardDto createdTrelloCardDto = trelloService.createTrelloCard(trelloCardDto);
+//        // Then
+//        assertEquals("Test Id", createdTrelloCardDto.getId());
+//        assertEquals("Testing", createdTrelloCardDto.getName());
+//        assertEquals("Test URL", createdTrelloCardDto.getShortUrl());
+//    }
 
 }
