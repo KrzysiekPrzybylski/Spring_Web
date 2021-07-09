@@ -37,7 +37,7 @@ public class MailCreatorService {
 
         Context context = new Context();
         context.setVariable("message", message);
-        context.setVariable("tasks_url", "http://localhost:8080/crud");
+        context.setVariable("tasks_url", "http://localhost:8888/crud");
         context.setVariable("button", "Visit website");
         context.setVariable("admin_name", adminConfig.getAdminName());
         context.setVariable("company_name", companyConfig.getCompanyName());
@@ -48,7 +48,7 @@ public class MailCreatorService {
         context.setVariable("show_button", false);
         context.setVariable("is_friend", true);
         context.setVariable("admin_config", adminConfig);
-        return templateEngine.process("mail/created-trello-card-mail", context );
+        return templateEngine.process("mail/created-trello-card-mail.html", context );
     }
 
     public String buildAmountOfTasksDailyMail(String message) {
@@ -65,7 +65,7 @@ public class MailCreatorService {
 
         Context context = new Context();
         context.setVariable("message", message);
-        context.setVariable("tasks_url", "http://localhost:8080/crud");
+        context.setVariable("tasks_url", "http://localhost:8888/crud");
         context.setVariable("button", "Visit website");
         context.setVariable("admin_name", adminConfig.getAdminName());
         context.setVariable("company_name", companyConfig.getCompanyName());

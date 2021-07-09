@@ -19,7 +19,7 @@ public class TrelloController {
     @Autowired
     private TrelloFacade trelloFacade;
 
-    @GetMapping("getTrelloBoards")
+    @GetMapping("/boards")
     public List<TrelloBoardDto> getTrelloBoards() {
 
         return trelloFacade.fetchTrelloBoards();
@@ -38,7 +38,7 @@ public class TrelloController {
 //                .filter( t -> t.getName().contains("Kodilla"))
 //                .collect(Collectors.toList());
     }
-    @PostMapping("createTrelloCard")
+    @PostMapping("/cards")
     public CreatedTrelloCardDto createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return  trelloFacade.createCard(trelloCardDto);
     }
